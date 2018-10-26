@@ -1,0 +1,57 @@
+table.motor-form-table {
+
+}
+.motor-form-table th {
+    width: 300px;
+}
+table.motor-form-table th,
+table.motor-form-table td {
+    vertical-align: top;
+}
+table.motor-form-table .description {
+    color: #999;
+    display: block;
+    margin: 4px 0 0;
+}
+table.motor-form-table th .description {
+    font-weight: 300;
+}
+table.motor-form-table input[type=text] {
+    display: block;
+    width: 100%;
+}
+table.motor-form-table .repeatable-add {
+
+}
+table.motor-form-table .custom_repeatable li {
+    margin: 0 0 15px;
+}
+table.motor-form-table .custom_repeatable li .custom_clear_image_button {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 4px 20px 0 20px;
+}
+table.motor-form-table .custom_repeatable li .sort {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 2px 20px 0 0;
+}
+table.motor-form-table .custom_repeatable li .custom_preview_image {
+    display: inline-block;
+    vertical-align: bottom;
+    margin: 0 0 10px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
