@@ -283,6 +283,7 @@ function motor_megamenu_scripts_styles() {
 add_action( 'admin_enqueue_scripts', 'motor_megamenu_scripts_styles', 200 );
 
 
+
 /**
  * To add WooCommerce registration form custom fields.
  */
@@ -319,4 +320,59 @@ function text_domain_woo_save_reg_form_fields($customer_id) {
     }
 }
 
+//add recaptcha file to head
+function my_custom_js() {
+    echo "<script src='https://www.google.com/recaptcha/api.js'></script>";
+}
+
+add_action( 'wp_head', 'my_custom_js' );
+
+//recaptcha send on submit to form
 add_action('woocommerce_created_customer', 'text_domain_woo_save_reg_form_fields');
+
+function wooc_validate_re_captcha_field( $username, $email, $wpErrors )
+{
+    $remoteIP = $_SERVER['REMOTE_ADDR'];
+    $recaptchaResponse = $_POST['g-recaptcha-response'];
+
+    $response = wp_remote_post( 'https://www.google.com/recaptcha/api/siteverify', [
+        'body' => [
+            'secret'   => '6LfiEHcUAAAAAOajIrLRaZ7euoHvMaUCg6isHYx0',
+            'response' => $recaptchaResponse,
+            'remoteip' => $remoteIP
+        ]
+    ] );
+
+    $response_code = wp_remote_retrieve_response_code( $response );
+    $response_body = wp_remote_retrieve_body( $response );
+
+    if ( $response_code == 200 )
+    {
+        $result = json_decode( $response_body, true );
+
+        if ( ! $result['success'] )
+        {
+            switch ( $result['error-codes'] )
+            {
+                case 'missing-input-secret':
+                case 'invalid-input-secret':
+                    $wpErrors->add( 'recaptcha', __( '<strong>ERROR</strong>: Invalid reCAPTCHA secret key.', 'woocommerce' ) );
+                    break;
+
+                case 'missing-input-response' :
+                case 'invalid-input-response' :
+                    $wpErrors->add( 'recaptcha', __( '<strong>ERROR</strong>: Please check the box to prove that you are not a robot.', 'woocommerce' ) );
+                    break;
+
+                default:
+                    $wpErrors->add( 'recaptcha', __( '<strong>ERROR</strong>: Something went wront validating the reCAPTCHA.' . $result['error-codes'], 'woocommerce' ) );
+                    break;
+            }
+        }
+    }
+    else
+    {
+        $wpErrors->add( 'recaptcha_error', __( '<strong>Error</strong>: Unable to reach the reCAPTCHA server.', 'woocommerce' ) );
+    }
+}
+add_action( 'woocommerce_register_post', 'wooc_validate_re_captcha_field', 10, 3 );

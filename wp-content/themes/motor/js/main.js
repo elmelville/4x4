@@ -117,7 +117,7 @@ function motor_ajax_cart(element) {
 		jQuery('.input-text.qty').each(function(){
 			total_items += parseInt(jQuery(this).val());
 		});
-		jQuery('.header-cart-count span').text(total_items);
+		jQuery('.header-cart-count span').text(total_items);        
     });
 
     return true;
@@ -932,7 +932,7 @@ jQuery(document).ready(function ($) {
 						}
 
 					}
-				}				
+				}
 			}
 
 			if ($('.cart-list').length > 0) {

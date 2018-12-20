@@ -13,7 +13,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.1.0
+ * @version 3.5.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -96,7 +96,7 @@ $cart_template = $motor_options['catalog_cart'];
 										}
 
 										// Meta data
-										echo WC()->cart->get_item_data( $cart_item );
+										echo wc_get_formatted_cart_item_data( $cart_item ); // PHPCS: XSS ok.
 
 										// Backorder notification
 										if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
@@ -122,7 +122,7 @@ $cart_template = $motor_options['catalog_cart'];
 										$product_quantity = woocommerce_quantity_input( array(
 											'input_name'  => "cart[{$cart_item_key}][qty]",
 											'input_value' => $cart_item['quantity'],
-										'max_value'   => $_product->get_max_purchase_quantity(),
+											'max_value'   => $_product->get_max_purchase_quantity(),
 											'min_value'   => '0',
 											'price' => wc_get_price_to_display($_product),
 										), $_product, false );

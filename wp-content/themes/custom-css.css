@@ -66,7 +66,6 @@
 	font-size: 13px;
 }
 
-
 body.home .vc_column_container .columns-6 article.sectgl{
 	width: 14%;
 }
@@ -75,7 +74,7 @@ body.home .vc_column_container .columns-6 h4 span{
 	font-size: 14px;
 }
 
-.maincont .section-gallery .sectgl:nth-child(3n){
+body.home .maincont .section-gallery .sectgl:nth-child(3n){
 	margin: 0 2% 26px 0;
 }
 
@@ -114,10 +113,15 @@ body.home .vc_column_container .columns-6 .prod-items .prod-i p.prod-i-info .but
     padding: 0;	
 }
 
+.cart-actions .tax-rate{
+    text-align: right;
+    width: 100%;
+}
+
 .cart-actions .cart-subtotal{
     margin-right: 0;
-    margin-left: 5%;
-	text-align:right;
+    margin-left: 5%;	
+	text-align: right;
 }
 
 .flex-break{
@@ -155,7 +159,13 @@ body.home .vc_column_container .columns-6 .prod-items .prod-i p.prod-i-info .but
 }
 
 @media only screen and (max-width: 767px){
-	.maincont .section-list-withsb .section-gallery .sectgl{
+	.cart-actions .cart-subtotal,
+	.cart-actions .tax-rate,
+	.cart-actions .order-total{
+		text-align: center;
+		width: 100%;
+	}		
+	body.home .maincont .section-list-withsb .section-gallery .sectgl{
 		width: 47%;
 	}
 	.cart-actions div.shipping{
@@ -176,6 +186,9 @@ body.home .vc_column_container .columns-6 .prod-items .prod-i p.prod-i-info .but
 		width: 100%;
 	}	
 	.maincont .section-gallery .sectgl{
-		width: 47%;
+			width: 47%;
 	}
+}
+.site-header-before{
+    background: #4e5b30;
 }

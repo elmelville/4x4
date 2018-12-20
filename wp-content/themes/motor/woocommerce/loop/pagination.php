@@ -36,7 +36,7 @@ echo paginate_links( apply_filters( 'woocommerce_pagination_args', array(
 	'prev_text'    => '<i class="fa fa-angle-left"></i>',
 	'next_text'    => '<i class="fa fa-angle-right"></i>',
 	'type'         => 'list',
-	'end_size'     => 3,
-	'mid_size'     => 3
+	'end_size'     => 2,
+	'mid_size'     => 1
 ) ) );
 ?>
