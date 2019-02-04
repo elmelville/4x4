@@ -258,16 +258,23 @@ jQuery(document).ready(function ($) {
 		});
 	}
 
+	$('a.menu-item-has-children').on('click',function(e){
+		e.preventDefault();
+		$(this).parent().siblings().find('active').removeClass('active');
+		$(this).parent().siblings().removeClass('active');
+		$(this).parent().toggleClass('active');		
+	});
 
+/*
 
 	// Top Menu Seacrh
 	$('.header').on('click', '#header-searchbtn', function () {
 		if ($(this).hasClass('opened')) {
 			$(this).removeClass('opened');
-			/*$('#header-search').hide();*/
+			//$('#header-search').hide();
 		} else {
 			$(this).addClass('opened');
-			/*$('#header-search').show();*/
+			//$('#header-search').show();
 		}
 		return false;
 	});
@@ -298,6 +305,7 @@ jQuery(document).ready(function ($) {
 		}
 	});
 
+*/
 
 	// Section Menu
 	if ($('#section-menu-btn').length > 0) {

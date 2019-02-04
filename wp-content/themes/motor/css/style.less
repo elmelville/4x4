@@ -11235,3 +11235,332 @@ body form.wpcf7-form .form-light:focus {
 /*----------------------------------
 28 - Footer
 ----------------------------------*/
+
+
+/*----------------------------------
+29 - Alterations For Pagination
+----------------------------------*/
+
+
+body.woocommerce .cm_SearchResult,
+body.woocommerce nav.woocommerce-pagination {
+    text-align: center;
+}
+
+body.woocommerce .cm_SearchResult li a,
+body.woocommerce nav.woocommerce-pagination li a,
+body.woocommerce .cm_SearchResult li span,
+body.woocommerce nav.woocommerce-pagination li span {
+    position: relative;
+    font-family: "Open Sans", "Open Sans", sans-serif;
+    font-weight: 700;
+    color: #53585a;
+    font-size: 17px;
+    background: #eaebeb;
+    text-align: center;
+    height: 40px;
+    width: 40px;
+    display: block;
+    padding-top: 11px;
+}
+
+body.woocommerce .cm_SearchResult li span.current,
+body.woocommerce nav.woocommerce-pagination li span.current {
+    color: #eaebeb;
+    background: #bdd09e;
+    border-radius: 0px;
+}
+
+body.woocommerce .cm_SearchResult .next.page-numbers,
+body.woocommerce nav.woocommerce-pagination .next.page-numbers,
+body.woocommerce .cm_SearchResult .prev.page-numbers,
+body.woocommerce nav.woocommerce-pagination .prev.page-numbers {
+    height: 40px;
+    display: block;
+    background: 0 0;
+}
+
+body.woocommerce .cm_SearchResult .next.page-numbers:hover,
+body.woocommerce nav.woocommerce-pagination .next.page-numbers:hover,
+body.woocommerce .cm_SearchResult .prev.page-numbers:hover,
+body.woocommerce nav.woocommerce-pagination .prev.page-numbers:hover {
+    background: 0 0;
+}
+
+body.woocommerce .cm_SearchResult .next.page-numbers .fa,
+body.woocommerce nav.woocommerce-pagination .next.page-numbers .fa,
+body.woocommerce .cm_SearchResult .prev.page-numbers .fa,
+body.woocommerce nav.woocommerce-pagination .prev.page-numbers .fa {
+    font-weight: 700;
+    font-size: 30px;
+    color: #bdd09e;
+    position: relative;
+    margin: 0 5px;
+    line-height: 17px;
+}
+
+body.woocommerce .cm_SearchResult .dots.page-numbers,
+body.woocommerce nav.woocommerce-pagination .dots.page-numbers {
+    background: 0 0;
+}
+
+body.woocommerce .cm_SearchResult .go-to-wrapper .divider,
+body.woocommerce nav.woocommerce-pagination .go-to-wrapper .divider {
+    border-left: 1px solid #eaebeb;
+    width: 10px;
+    display: inline-block;
+    height: 40px;
+    top: 15px;
+    position: relative;
+}
+
+body.woocommerce .cm_SearchResult .go-to-wrapper span,
+body.woocommerce nav.woocommerce-pagination .go-to-wrapper span {
+    display: inline-block;
+    background: 0 0;
+    width: 100px;
+    font-weight: 500;
+}
+
+body.woocommerce .cm_SearchResult .go-to-wrapper input,
+body.woocommerce nav.woocommerce-pagination .go-to-wrapper input {
+    display: inline-block;
+    height: 40px;
+    border: none;
+    background: #eaebeb;
+    width: 40px;
+    font-family: "Open Sans", "Open Sans", sans-serif;
+    font-weight: 700;
+    color: #53585a;
+    font-size: 17px;
+    padding-left: 2px;
+}
+
+body.woocommerce .cm_SearchResult .go-to-wrapper .go-input,
+body.woocommerce nav.woocommerce-pagination .go-to-wrapper .go-input {
+    display: inline-block;
+    background: #eaebeb;
+    padding: 0 5px;
+    width: 70px;
+}
+
+body.woocommerce .cm_SearchResult .go-to-wrapper .fa,
+body.woocommerce nav.woocommerce-pagination .go-to-wrapper .fa {
+    font-weight: 700;
+    font-size: 30px;
+    color: #bdd09e;
+    top: 4px;
+    position: relative;
+    margin: 0 3px;
+    cursor: pointer;
+}
+
+body.woocommerce a#direct-to-page {
+    background: 0 0;
+    display: inline-block;
+}
+
+
+/*----------------------------------
+29 - Alterations For Pagination
+----------------------------------*/
+
+/*----------------------------------
+29 - Old Site Custom CSS
+----------------------------------*/
+
+
+body.home .vc_column_container .columns-6 article.sectgl{
+    width: 14%;
+}
+
+body.home .vc_column_container .columns-6 h4 span{
+    font-size: 14px;
+}
+
+body.home .maincont .section-gallery .sectgl:nth-child(3n){
+    margin: 0 2% 26px 0;
+}
+
+body.home .section-gallery .sectgl:nth-child(5n){
+    margin: 0 2% 26px 0;
+}
+
+body.home .vc_column_container .columns-6 .prod-items .prod-i p.prod-i-info .button{
+    font-size: 12px;
+}
+
+.woocommerce .cart-collaterals .cart_totals, .woocommerce-page .cart-collaterals .cart_totals{
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;    
+}
+
+.cart-actions div.shipping{
+    width: 28%;
+    margin: 0;
+    padding: 0; 
+}
+
+.cart-actions .tax-rate{
+    text-align: right;
+    width: 100%;
+}
+
+.cart-actions .cart-subtotal{
+    margin-right: 0;
+    margin-left: 5%;    
+    text-align: right;
+}
+
+.flex-break{
+    width: 100%;
+}
+
+.woocommerce a.button.alt.update-shipping{
+    width: 28%;
+    text-align: center;
+}
+
+.cart-actions .wc-proceed-to-checkout{
+    width: 28%;
+    padding: 1rem 0;
+    margin-left: 5%;    
+}
+
+.cart-actions .order-total{
+    margin-left: 5%;
+    text-align: right;
+}
+
+.cart-actions .shipping:after{
+    background: transparent;
+}
+
+.cart-actions .cart-subtotal:after{
+    background: transparent;
+}
+
+@media only screen and (min-width: 767px){
+    .cart-actions .cart-collaterals{
+        float: right;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .cart-actions .cart-subtotal,
+    .cart-actions .tax-rate,
+    .cart-actions .order-total{
+        text-align: center;
+        width: 100%;
+    }       
+    body.home .maincont .section-list-withsb .section-gallery .sectgl{
+        width: 47%;
+    }
+    .cart-actions div.shipping{
+        width: 100%;
+    padding-bottom: 10px;       
+    }
+    .cart-actions .cart-subtotal{
+        margin-left: 0px;
+    }
+    .cart-actions .order-total{
+        margin-left: 0px;
+    }
+    .woocommerce a.button.alt.update-shipping{
+        width: 100%;
+    }
+    .cart-actions .wc-proceed-to-checkout{
+        margin-left: 0px;
+        width: 100%;
+    }   
+    .maincont .section-gallery .sectgl{
+            width: 47%;
+    }
+}
+.site-header-before{
+    background: #4e5b30;
+}
+
+
+/*----------------------------------
+29 - Old Site Custom CSS
+----------------------------------*/
+
+
+/*----------------------------------
+30 - New Header
+----------------------------------*/
+
+.sidebar-header.header .cmm-container .cmm.cmm-theme-motor,
+.sidebar-header.header .cmm-container .cmm.cmm-theme-motor > li.cmm-layout-full{
+	position: unset;
+}
+
+.sidebar-header.header .cmm-container .cmm.cmm-theme-motor > li > .cmm-sub-container{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background: white;	
+}
+
+.sidebar-header.header .cmm-container > ul.cmm.cmm-theme-motor > li > .cmm-sub-container > .cmm-sub-wrapper.sub-menu{
+  margin-top: 0px;
+  height: 100vh;
+  padding: 10px 10px 40px 20px;
+  border-top: none;
+}
+
+.sidebar-header.header .cmm-container .cmm.cmm-theme-motor li ul li.active > .cmm-sub-container{
+  height: 100vh;
+  background: white;	
+}
+
+.sidebar-header.header .cmm-container .cmm.cmm-theme-motor li > .cmm-sub-container > ul.sub-menu, 
+.sidebar-header.header .cmm-container .cmm.cmm-theme-motor li > .cmm-sub-container .cmm-sub-wrapper{
+	box-shadow: none;
+	border: none;	
+  border-right: 1px solid #e0e4f6;
+  overflow-y: auto;
+
+}
+
+.sidebar-header.header  .cmm-container .cmm.cmm-theme-motor li:hover > ul, 
+.sidebar-header.header  .cmm-container .cmm.cmm-theme-motor li:hover > .cmm-sub-container, 
+.sidebar-header.header  .cmm-container .cmm.cmm-theme-motor li:hover > .cmm-content-container{
+	opacity: 0;
+	visibility: hidden;
+	z-index: 999;
+}
+
+.cmm-container .cmm.cmm-theme-motor > li > a, 
+.cmm-container .cmm.cmm-theme-motor > li > .cmm-nav-link{
+	cursor: pointer;
+}
+
+.sidebar-header.header .cmm-container .cmm.cmm-theme-motor li.active > ul, 
+.sidebar-header.header .cmm-container .cmm.cmm-theme-motor li.active > .cmm-sub-container, 
+.sidebar-header.header .cmm-container .cmm.cmm-theme-motor li.active > .cmm-content-container{
+	visibility: visible;
+	opacity: 1;
+	z-index: 1000;
+}
+
+/*----------------------------------
+30 - New Header
+----------------------------------*/
