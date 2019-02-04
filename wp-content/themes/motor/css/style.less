@@ -11237,7 +11237,6 @@ body form.wpcf7-form .form-light:focus {
 ----------------------------------*/
 
 
-
 /*----------------------------------
 29 - Alterations For Pagination
 ----------------------------------*/
@@ -11501,4 +11500,67 @@ body.home .vc_column_container .columns-6 .prod-items .prod-i p.prod-i-info .but
 
 /*----------------------------------
 29 - Old Site Custom CSS
+----------------------------------*/
+
+
+/*----------------------------------
+30 - New Header
+----------------------------------*/
+
+.sidebar-header.header .cmm-container .cmm.cmm-theme-motor,
+.sidebar-header.header .cmm-container .cmm.cmm-theme-motor > li.cmm-layout-full{
+	position: unset;
+}
+
+.sidebar-header.header .cmm-container .cmm.cmm-theme-motor > li > .cmm-sub-container{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background: white;	
+}
+
+.sidebar-header.header .cmm-container > ul.cmm.cmm-theme-motor > li > .cmm-sub-container > .cmm-sub-wrapper.sub-menu{
+  margin-top: 0px;
+  height: 100vh;
+  padding: 10px 10px 40px 20px;
+  border-top: none;
+}
+
+.sidebar-header.header .cmm-container .cmm.cmm-theme-motor li ul li.active > .cmm-sub-container{
+  height: 100vh;
+  background: white;	
+}
+
+.sidebar-header.header .cmm-container .cmm.cmm-theme-motor li > .cmm-sub-container > ul.sub-menu, 
+.sidebar-header.header .cmm-container .cmm.cmm-theme-motor li > .cmm-sub-container .cmm-sub-wrapper{
+	box-shadow: none;
+	border: none;	
+  border-right: 1px solid #e0e4f6;
+  overflow-y: auto;
+
+}
+
+.sidebar-header.header  .cmm-container .cmm.cmm-theme-motor li:hover > ul, 
+.sidebar-header.header  .cmm-container .cmm.cmm-theme-motor li:hover > .cmm-sub-container, 
+.sidebar-header.header  .cmm-container .cmm.cmm-theme-motor li:hover > .cmm-content-container{
+	opacity: 0;
+	visibility: hidden;
+	z-index: 999;
+}
+
+.cmm-container .cmm.cmm-theme-motor > li > a, 
+.cmm-container .cmm.cmm-theme-motor > li > .cmm-nav-link{
+	cursor: pointer;
+}
+
+.sidebar-header.header .cmm-container .cmm.cmm-theme-motor li.active > ul, 
+.sidebar-header.header .cmm-container .cmm.cmm-theme-motor li.active > .cmm-sub-container, 
+.sidebar-header.header .cmm-container .cmm.cmm-theme-motor li.active > .cmm-content-container{
+	visibility: visible;
+	opacity: 1;
+	z-index: 1000;
+}
+
+/*----------------------------------
+30 - New Header
 ----------------------------------*/
