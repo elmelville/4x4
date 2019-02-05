@@ -103,8 +103,9 @@ function cm_woocommerce_catalog_orderby( $options ) {
 }
 
 function cm_wp_nav_menu_items ($html) {
+    $branding = '<li><p class="header-logo"><a href="https://www.thejeepstop.com/"><img src="https://cdn.the4x4guys.com/wp-content/uploads/2018/10/26170242/4x4Guys.com_logo_4C.jpeg" alt="Staging Store"></a></p></li>';
     $categories = '<li class="menu-item-has-children cmm-item-depth-0 cmm-layout-full" data-settings="{&quot;width&quot;:&quot;&quot;,&quot;layout&quot;:&quot;full&quot;}"><a class="cmm-nav-link menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-67837"><span class="cmm-item-label">Shop By Category</span></a>
-<div class="cmm-sub-container"><ul class="sub-menu cmm-sub-wrapper">';
+<div class="cmm-sub-container"><ul class="sub-menu cmm-sub-wrapper">'.$branding;
     $categories .= hierarchical_category_tree(0);
     $categories .= '</div></li>';
     return $categories.$html;

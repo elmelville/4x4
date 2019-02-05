@@ -43,8 +43,8 @@ if (!empty($motor_options['header_before'])) {
 
 
 <?php /* Header - start */ ?>
-<div id="masthead" class="header">
-
+<div id="masthead" class="sidebar-header header">
+	<div class='menu-bg'></div>
 	<a href="#" class="header-menutoggle" id="header-menutoggle"><?php echo esc_html__('Menu', 'motor'); ?></a>
 
 	<div class="header-info">

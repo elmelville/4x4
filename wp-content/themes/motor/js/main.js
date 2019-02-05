@@ -260,9 +260,15 @@ jQuery(document).ready(function ($) {
 
 	$('a.menu-item-has-children').on('click',function(e){
 		e.preventDefault();
+		$('.menu-bg').show();
 		$(this).parent().siblings().find('active').removeClass('active');
 		$(this).parent().siblings().removeClass('active');
 		$(this).parent().toggleClass('active');		
+	});
+
+	$('.menu-bg').on('click',function(e){
+		$('.menu-bg').hide();
+		$('.menu-item-has-children').removeClass('active');
 	});
 
 /*

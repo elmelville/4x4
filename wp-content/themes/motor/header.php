@@ -44,7 +44,6 @@ if (!empty($motor_options['header_before'])) {
 
 <?php /* Header - start */ ?>
 <div id="masthead" class="header">
-
 	<a href="#" class="header-menutoggle" id="header-menutoggle"><?php echo esc_html__('Menu', 'motor'); ?></a>
 
 	<div class="header-info">
