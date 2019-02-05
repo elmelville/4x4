@@ -3833,7 +3833,7 @@ function paginate_links( $args = '' ) {
 		$page_links[] = '<a class="next page-numbers" href="' . esc_url( apply_filters( 'paginate_links', $link ) ) . '">' . $args['next_text'] . '</a>';
 	endif;
 	$jump_to = "</li><li class='go-to-wrapper'><div class='divider'></div><span>Go to page</span><input id='go-to' data-max='" . $total . "' class='go-to' type='text'></input><a id='direct-to-page' href=''>" . $args['next_text'] . "</a></li>";
-	$jump_to_script = "<script type='text/javascript'>document.getElementById('go-to').addEventListener('change',updateGoToTarget);function updateGoToTarget(){var newPage = Math.min(document.getElementById('go-to').value, 9);newPage = isNaN(newPage) ? 1 : newPage;newPage = newPage > 9 ? 9 : newPage;document.getElementById('direct-to-page').href = window.location.href.replace(/page\/[0-9]+\//,'') + 'page/' + newPage;}</script>";
+	$jump_to_script = "<script type='text/javascript'>document.getElementById('go-to').addEventListener('change',updateGoToTarget);function updateGoToTarget(){var newPage = Math.min(document.getElementById('go-to').value, " . $total . ");newPage = isNaN(newPage) ? 1 : newPage;newPage = newPage > " . $total . " ? " . $total . " : newPage;document.getElementById('direct-to-page').href = window.location.href.replace(/page\/[0-9]+\//,'') + 'page/' + newPage;}</script>";
 	switch ( $args['type'] ) {
 		case 'array' :
 			return $page_links;

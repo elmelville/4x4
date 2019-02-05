@@ -299,11 +299,12 @@ body.home .section-gallery .sectgl:nth-child(5n+1) {
 
 /*Cart*/
 
-@media only screen and (max-width: 480px) {}
-.cart-actions div.shipping {
-	width: 100%;
-	margin: 0 0 20px;
-	float: none;
+@media only screen and (max-width: 480px) {
+	.cart-actions div.shipping {
+		width: 100%;
+		margin: 0 0 20px;
+		float: none;
+	}
 }
 
 /*Product Categories*/
@@ -743,4 +744,130 @@ body .wpcf7 span.ajax-loader {
 
 .woocommerce-form .g-recaptcha{
 	margin-bottom: 20px;
+}
+
+
+.cm_SearchResult,
+.woocommerce-pagination {
+    text-align: center
+}
+
+.cm_SearchResult li a,
+.woocommerce-pagination li a,
+.cm_SearchResult li span,
+.woocommerce-pagination li span {
+    position: relative;
+    font-family: "Open Sans", "Open Sans", sans-serif;
+    font-weight: 700;
+    color: #53585a;
+    font-size: 17px;
+    background: #eaebeb;
+    text-align: center;
+    height: 40px;
+    width: 40px;
+    display: block;
+    padding-top: 8px
+}
+
+.cm_SearchResult li span.current,
+.woocommerce-pagination li span.current {
+    color: #eaebeb;
+    background: #bdd09e
+}
+
+.cm_SearchResult .next.page-numbers,
+.woocommerce-pagination .next.page-numbers,
+.cm_SearchResult .prev.page-numbers,
+.woocommerce-pagination .prev.page-numbers {
+    height: 40px;
+    display: block;
+    background: 0 0
+}
+
+.cm_SearchResult .next.page-numbers:hover,
+.woocommerce-pagination .next.page-numbers:hover,
+.cm_SearchResult .prev.page-numbers:hover,
+.woocommerce-pagination .prev.page-numbers:hover {
+    background: 0 0
+}
+
+.cm_SearchResult .next.page-numbers .fa,
+.woocommerce-pagination .next.page-numbers .fa,
+.cm_SearchResult .prev.page-numbers .fa,
+.woocommerce-pagination .prev.page-numbers .fa {
+    font-weight: 700;
+    font-size: 30px;
+    color: #bdd09e;
+    top: 4px;
+    position: relative;
+    margin: 0 5px
+}
+
+.cm_SearchResult .dots.page-numbers,
+.woocommerce-pagination .dots.page-numbers {
+    background: 0 0
+}
+
+.cm_SearchResult .go-to-wrapper .divider,
+.woocommerce-pagination .go-to-wrapper .divider {
+    border-left: 1px solid #eaebeb;
+    width: 10px;
+    display: inline-block;
+    height: 40px;
+    top: 15px;
+    position: relative
+}
+
+.cm_SearchResult .go-to-wrapper span,
+.woocommerce-pagination .go-to-wrapper span {
+    display: inline-block;
+    background: 0 0;
+    width: 100px;
+    font-weight: 500
+}
+
+.cm_SearchResult .go-to-wrapper input,
+.woocommerce-pagination .go-to-wrapper input {
+    display: inline-block;
+    height: 40px;
+    border: none;
+    background: #eaebeb;
+    width: 40px;
+    font-family: "Open Sans", "Open Sans", sans-serif;
+    font-weight: 700;
+    color: #53585a;
+    font-size: 17px;
+    padding-left: 2px
+}
+
+.cm_SearchResult .go-to-wrapper .go-input,
+.woocommerce-pagination .go-to-wrapper .go-input {
+    display: inline-block;
+    background: #eaebeb;
+    padding: 0 5px;
+    width: 70px
+}
+
+.cm_SearchResult .go-to-wrapper .fa,
+.woocommerce-pagination .go-to-wrapper .fa {
+    font-weight: 700;
+    font-size: 30px;
+    color: #bdd09e;
+    top: 4px;
+    position: relative;
+    margin: 0 3px;
+    cursor: pointer
+}
+
+.cm_SearchResult .cmTemplate_PaginationButton:nth-child(n+2) {
+    margin-left: 3px;
+}
+
+a#direct-to-page {
+    background: 0 0;
+    display: inline-block
+}
+
+.woocommerce-address-fields button{
+    margin-top: 10px;
 }
