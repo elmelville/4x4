@@ -271,6 +271,10 @@ jQuery(document).ready(function ($) {
 		$('.menu-item-has-children').removeClass('active');
 	});
 
+	$('.close-menu').on('click',function(){
+		$('.active').removeClass('active');
+		$('.menu-bg').hide();
+	});
 /*
 
 	// Top Menu Seacrh
