@@ -316,7 +316,7 @@ $cart_template = $motor_options['catalog_cart'];
 
 		<div class="custom-order-note-wrapper">
 			<div class='custom-order-note cm_flex-grow cm_flex-center cm_ModelSelector-selects'>
-				<h2>Vehicle Details</h2>
+				<h3>Vehicle Details</h3>
 				<p>If you want us to check that the parts you order will definitely fit, enter your vehicle details below.</p>
 				<div class='cmTemplate_Year order-note'>
 					<label for="year">Year</label>
