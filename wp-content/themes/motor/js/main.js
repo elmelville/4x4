@@ -271,6 +271,10 @@ jQuery(document).ready(function ($) {
 		$('.menu-item-has-children').removeClass('active');
 	});
 
+	$('.close-menu').on('click',function(){
+		$('.active').removeClass('active');
+		$('.menu-bg').hide();
+	});
 /*
 
 	// Top Menu Seacrh
@@ -1337,24 +1341,27 @@ jQuery(document).ready(function ($) {
 		// Sticky header
 		if ($('.header-sticky').length > 0) {
 			$(window).scroll(function () {
-				var topbar = false;
-				var topbar_ht = $('.site-header-before').height();
-				if ($('.site-header-before').length > 0 && $('.site-header-before').css('display') !== 'none') {
-					topbar = true;
-				}
-				if (topbar) {
-					$('body').css('margin-top', '0px');
-					if (topbar_ht < $(window).scrollTop()) {
-						$('.header-sticky .header').addClass('header_sticky');
-						$('.site-header-before').css('margin-bottom', $('.header-sticky .header').outerHeight());
-					} else {
-						$('.header-sticky .header').removeClass('header_sticky');
-						$('.site-header-before').css('margin-bottom', '0px');
+				if($(window).height() > screen.height){
+					var topbar = false;
+					var topbar_ht = $('.site-header-before').height();
+					if ($('.site-header-before').length > 0 && $('.site-header-before').css('display') !== 'none') {
+						topbar = true;
 					}
-				} else {
-					$('.header-sticky .header').addClass('header_sticky');
-					$('body').css('margin-top', $('.header-sticky .header').outerHeight());
+					if (topbar) {
+						$('body').css('margin-top', '0px');
+						if (topbar_ht < $(window).scrollTop()) {
+							$('.header-sticky .header').addClass('header_sticky');
+							$('.site-header-before').css('margin-bottom', $('.header-sticky .header').outerHeight());
+						} else {
+							$('.header-sticky .header').removeClass('header_sticky');
+							$('.site-header-before').css('margin-bottom', '0px');
+						}
+					} else {
+						$('.header-sticky .header').addClass('header_sticky');
+						$('body').css('margin-top', $('.header-sticky .header').outerHeight());
+					}
 				}
+
 			});
 		}
 
