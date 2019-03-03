@@ -97,8 +97,10 @@ function motor_ajax_cart(element) {
     jQuery("a.checkout-button.wc-forward").addClass('disabled');
 
     jQuery.post( form.attr('action'), formData, function(resp) {
+    	console.log(resp);
     	jQuery('.cart-subtotal').html(jQuery(resp).find('.cart-subtotal').html());
     	jQuery('.order-total').html(jQuery(resp).find('.order-total').html());
+    	jQuery('.cart-actions').html(jQuery(resp).find('.cart-actions').html());
 
         jQuery('#update_cart').remove();
         jQuery('#is_wac_ajax').remove();
