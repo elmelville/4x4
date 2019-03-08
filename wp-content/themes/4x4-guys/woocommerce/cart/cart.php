@@ -314,6 +314,18 @@ $cart_template = $motor_options['catalog_cart'];
 
 		<?php endif; ?>
 
+		<div class='custom-order-note'>
+			<div class='order-note'>
+				<select name="year">
+					<?php 
+						for ($i = 1990; $i <= 2020; $i++) {
+							echo "<option value='".$i."'>".$i."</option>";
+						}
+					?>					
+				</select>
+			</div>
+		</div>
+
 
 		<div class="cart-actions">
 

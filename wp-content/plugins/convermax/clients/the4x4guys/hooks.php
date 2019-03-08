@@ -103,13 +103,14 @@ function cm_woocommerce_catalog_orderby( $options ) {
 }
 
 function cm_wp_nav_menu_items ($html) {
+    $home = '<li class="cmm-item-depth-0 cmm-layout-full"><a href="/" class="cmm-nav-link menu-item menu-item-type-post_type menu-item-object-page"><span class="cmm-item-label">Home</span></a></li>';
     $branding = '<li class="menu-logo"><p class="header-logo"><a href="https://www.thejeepstop.com/"><img src="https://cdn.the4x4guys.com/wp-content/uploads/2018/10/26170242/4x4Guys.com_logo_4C.jpeg" alt="Staging Store"></a></p></li>';
     $close_icon = '<li class="close-menu"><div><svg viewPort="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg"><line x1="1" y1="11" x2="11" y2="1" stroke="black" stroke-width="2"/><line x1="1" y1="1" x2="11" y2="11" stroke="black" stroke-width="2"/></svg></div></li>';
-    $categories = '<li class="menu-item-has-children cmm-item-depth-0 cmm-layout-full" data-settings="{&quot;width&quot;:&quot;&quot;,&quot;layout&quot;:&quot;full&quot;}"><a class="cmm-nav-link menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-67837"><span class="cmm-item-label">Categories</span></a>
-<div class="cmm-sub-container"><ul class="sub-menu cmm-sub-wrapper">'.$branding.$close_icon;
-    $categories .= hierarchical_category_tree(0);
-    $categories .= '</div></li>';
-    return $categories.$html;
+    $categories = '<li class="menu-item-has-children cmm-item-depth-0 cmm-layout-full" data-settings="{&quot;width&quot;:&quot;&quot;,&quot;layout&quot;:&quot;full&quot;}"><a class="cmm-nav-link menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-67837"><span class="cmm-item-label">Categories</span></a><div class="cmm-sub-container"><ul class="sub-menu cmm-sub-wrapper">';
+    $full_menu = $home.$categories.$branding.$close_icon;
+    $full_menu .= hierarchical_category_tree(0);
+    $full_menu .= '</div></li>';
+    return $full_menu.$html;
 }
 
 function cm_wp_get_nav_menu_items ($items) {

@@ -376,3 +376,30 @@ function wooc_validate_re_captcha_field( $username, $email, $wpErrors )
     }
 }
 add_action( 'woocommerce_register_post', 'wooc_validate_re_captcha_field', 10, 3 );
+
+
+add_action('woocommerce_after_order_notes', 'customise_checkout_field');
+
+function customise_checkout_field($checkout)
+{
+	echo '<div id="customise_checkout_field"><h2>' . __('Heading') . '</h2>';
+	woocommerce_form_field('cart_note_year', array(
+		'type' => 'text',
+		'class' => array(
+		'my-field-class form-row-wide'
+	) ,
+	'label' => __('Vehicle model year') ,
+	'placeholder' => __('Vehicle model year') ,
+	'required' => false,
+	) , $checkout->get_value('cart_note_year'));
+	echo '</div>';
+}
+
+add_action('woocommerce_checkout_update_order_meta', 'customise_checkout_field_update_order_meta');
+
+function customise_checkout_field_update_order_meta($order_id)
+{
+    if (!empty($_POST['cart_note_year'])) {
+        update_post_meta($order_id, 'select', sanitize_text_field($_POST['cart_note_year']));
+    }
+}
