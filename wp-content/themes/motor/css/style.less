@@ -7432,9 +7432,6 @@ div.product .variations-type1 .woocommerce-variation.single_variation p,
 	display: block;
 	content: '';
 }
-.cart-actions .cart-collaterals .cart-totals-ttl {
-	margin: 0 0 9px;
-}
 .cart-actions .cart-collaterals .cart-totals-val {
 	color: #283346;
 }
@@ -11366,7 +11363,7 @@ body.woocommerce a#direct-to-page {
 ----------------------------------*/
 
 /*----------------------------------
-29 - Old Site Custom CSS
+29 - Custom CSS
 ----------------------------------*/
 
 
@@ -11413,7 +11410,7 @@ body.home .vc_column_container .columns-6 .prod-items .prod-i p.prod-i-info .but
 
 .cart-actions div.shipping{
     width: 28%;
-    margin: 0;
+    margin: 0 0 0 5%;
     padding: 0; 
 }
 
@@ -11492,6 +11489,9 @@ body.home .vc_column_container .columns-6 .prod-items .prod-i p.prod-i-info .but
     .maincont .section-gallery .sectgl{
             width: 47%;
     }
+	.cart-discount{
+		width: 100%;
+	}    
 }
 .site-header-before{
     background: #4e5b30;
@@ -11508,8 +11508,77 @@ body .section-gallery .sectgl{
 	margin-bottom: 0px;
 }
 
+.cart-discount{
+	width: 28%;
+}
+
+.cart-actions .cart-collaterals .cart-totals-ttl{
+	margin: 0 0 1px;
+}
+
+#shipping-cart-methods .woocommerce-shipping-totals th.dropdown-list{
+    margin-bottom: 10px;	
+}
+
+body .cart-actions table#shipping-cart-methods .woocommerce-shipping-totals th.dropdown-list:after{
+	content: '';
+}
+
+.cart-actions .shipping ul#shipping_method{
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    border: none;
+    padding-left: 0px;	
+}
+.custom-order-note{
+    margin: 0 0 26px;
+    position: relative;
+    background: #fff;
+    border-radius: 4px;
+    padding: 0;
+    z-index: 2;
+    box-shadow: inset 0 -4px 0px 0px #dfe2f0, 0 10px 20px 0px rgba(192,196,215,0.25);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.custom-order-note.cm_flex-center{
+	flex-wrap: wrap;	
+}
+
+.custom-order-note h3{
+	width: 100%;
+	text-align: left;
+  font-size: 20px;
+  margin: 0;
+  font-family: Roboto, 'Montserrat', sans-serif;
+  font-style: initial;
+  font-weight: 700;
+  color: #283346;
+  letter-spacing: 0px;
+  text-transform: none;
+  margin-bottom: 10px;	
+}
+
+.custom-order-note p{
+	width: 100%;
+	text-align: left;
+  margin-bottom: 10px;
+  font-size: 15px;	
+}
+
+.custom-order-note .order-note label{
+    width: 100%;
+    display: block;
+    text-align: left;
+    padding-left: 26%;
+    margin-bottom: 10px;	
+}
+
 /*----------------------------------
-29 - Old Site Custom CSS
+29 - Custom CSS
 ----------------------------------*/
 
 

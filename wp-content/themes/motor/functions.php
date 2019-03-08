@@ -377,7 +377,6 @@ function wooc_validate_re_captcha_field( $username, $email, $wpErrors )
 }
 add_action( 'woocommerce_register_post', 'wooc_validate_re_captcha_field', 10, 3 );
 
-
 add_action('woocommerce_after_order_notes', 'customise_checkout_field');
 
 function customise_checkout_field($checkout)
@@ -395,11 +394,57 @@ function customise_checkout_field($checkout)
 	echo '</div>';
 }
 
+add_action('woocommerce_after_order_notes', 'add_custom_checkout_field');
+
+function add_custom_checkout_field($checkout)
+{
+	echo '<div id="customise_checkout_field"><h2>Vehicle Details</h2>';
+	if(isset($_COOKIE['year'])) {
+		update_order_vehicle_note('year',__($_COOKIE['year']),__('Vehicle model year'));
+	}
+	if(isset($_COOKIE['make'])) {
+		update_order_vehicle_note('make',__($_COOKIE['make']),__('Vehicle model make'));
+	}
+	if(isset($_COOKIE['model'])) {
+		update_order_vehicle_note('model',__($_COOKIE['model']),__('Vehicle model model'));
+	}
+	if(isset($_COOKIE['submodel'])) {
+		update_order_vehicle_note('submodel',__($_COOKIE['submodel']),__('Vehicle model submodel'));
+	}			
+	echo '</div>';	
+}
+
+function update_order_vehicle_note($note_name,$note_value,$note_label){
+	$note_title = 'cart_note_'.$note_name;	
+	return woocommerce_form_field($note_title, array(
+		'type' => 'text',
+		'class' => array(
+			'checkout-note form-row-wide'
+		) ,
+		'label' => __($note_label) ,
+		'placeholder' => __($note_label),
+		'name' => __($note_label),
+		'required' => false,
+		), 
+	__( $note_value ));	
+}
+
 add_action('woocommerce_checkout_update_order_meta', 'customise_checkout_field_update_order_meta');
 
-function customise_checkout_field_update_order_meta($order_id)
-{
+function customise_checkout_field_update_order_meta($order_id){
     if (!empty($_POST['cart_note_year'])) {
         update_post_meta($order_id, 'select', sanitize_text_field($_POST['cart_note_year']));
     }
+    if(isset($_COOKIE['year'])) {
+        update_post_meta($order_id, 'year', __($_COOKIE['year']));
+    }
+    if(isset($_COOKIE['make'])) {
+        update_post_meta($order_id, 'make', __($_COOKIE['make']));
+    }
+    if(isset($_COOKIE['model'])) {
+        update_post_meta($order_id, 'model', __($_COOKIE['model']));
+    }
+    if(isset($_COOKIE['submodel'])) {
+        update_post_meta($order_id, 'submodel', __($_COOKIE['submodel']));
+    }            
 }
