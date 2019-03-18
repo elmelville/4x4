@@ -314,74 +314,18 @@ $cart_template = $motor_options['catalog_cart'];
 
 		<?php endif; ?>
 
-		<div class='custom-order-note'>
-			<div class='order-note'>
-				<select name="year">
-					<?php 
-						for ($i = 1990; $i <= 2020; $i++) {
-							echo "<option value='".$i."'>".$i."</option>";
-						}
-					?>					
-				</select>
-			</div>
-		</div>
 		<div class="custom-order-note-wrapper">
-			<div class='custom-order-note cm_flex-grow cm_flex-center cm_ModelSelector-selects'>
-				<h3>Vehicle Details</h3>
-				<p>If you want us to check that the parts you order will definitely fit, enter your vehicle details below.</p>
-				<div class='cmTemplate_Year order-note'>
-					<label for="year">Year</label>
-					<select id="cart_note_year" class="cm_select" name="year" onchange="updateUserVehicle(this,'year')">
-						<option value="Not Selected">Not selected</option>
-						<?php 
-							if(isset($_COOKIE['year'])){
-								$selected_year = $_COOKIE['year'];
-							}else{
-								$selected_year = 'unset';
-							}
-							for ($i = 1990; $i <= 2020; $i++) {
-								if($selected_year == $i){
-									echo "<option selected='selected' value='".$i."'>".$i."</option>";
-								}else{
-									echo "<option value='".$i."'>".$i."</option>";
-								}								
-							}
-						?>					
-					</select>
-				</div>
-				<div class='cmTemplate_Year order-note'>
-					<label for="make">Make</label>
-					<select id="cart_note_make" class="cm_select" name="make" onchange="updateUserVehicle(this,'make')">
-						<option value="Not Selected">Not selected</option>
-						<option value='make-1'>Make 1</option>
-						<option value='make-2'>Make 2</option>
-						<option value='make-3'>Make 3</option>				
-					</select>
-				</div>
-				<div class='cmTemplate_Year order-note'>
-					<label for="model">Model</label>
-					<select id="cart_note_model" class="cm_select" name="model" onchange="updateUserVehicle(this,'model')">
-						<option value="Not Selected">Not selected</option>
-						<option value='model-1'>model 1</option>
-						<option value='model-2'>model 2</option>
-						<option value='model-3'>model 3</option>					
-					</select>
-				</div>
-				<div class='cmTemplate_Year order-note'>
-					<label for="submodel">Submodel</label>
-					<select id="cart_note_submodel" class="cm_select" name="submodel" onchange="updateUserVehicle(this,'submodel')">
-						<option value="Not Selected">Not selected</option>
-						<option value='submodel-1'>submodel 1</option>
-						<option value='submodel-2'>submodel 2</option>
-						<option value='submodel-3'>submodel 3</option>				
-					</select>
-				</div>									
-			</div>
+	      <div id="cm_ymm_cart"></div>
 		</div>	
 
 		<script>
-			function updateUserVehicle(select,cname){
-				setCookie(cname,select.value,14);
+			function updateUserVehicle(vehicle){
+			    console.log(vehicle);
+			    for(var data in vehicle){
+			    	if(vehicle.hasOwnProperty(data)){
+			    		setCookie(data,vehicle[data],14);
+			    	}
+			    }
 			}
 			function setCookie(cname, cvalue, exdays) {
 			  var d = new Date();
