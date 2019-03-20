@@ -377,41 +377,26 @@ function wooc_validate_re_captcha_field( $username, $email, $wpErrors )
 }
 add_action( 'woocommerce_register_post', 'wooc_validate_re_captcha_field', 10, 3 );
 
-add_action('woocommerce_after_order_notes', 'customise_checkout_field');
-
-function customise_checkout_field($checkout)
-{
-	echo '<div id="customise_checkout_field"><h2>' . __('Heading') . '</h2>';
-	woocommerce_form_field('cart_note_year', array(
-		'type' => 'text',
-		'class' => array(
-		'my-field-class form-row-wide'
-	) ,
-	'label' => __('Vehicle model year') ,
-	'placeholder' => __('Vehicle model year') ,
-	'required' => false,
-	) , $checkout->get_value('cart_note_year'));
-	echo '</div>';
-}
-
 add_action('woocommerce_after_order_notes', 'add_custom_checkout_field');
 
 function add_custom_checkout_field($checkout)
 {
-	echo '<div id="customise_checkout_field"><h2>Vehicle Details</h2>';
-	if(isset($_COOKIE['year'])) {
-		update_order_vehicle_note('year',__($_COOKIE['year']),__('Vehicle model year'));
+	if(isset($_COOKIE['year']) && isset($_COOKIE['make']) && isset($_COOKIE['model'])) {
+		echo '<div id="customise_checkout_field"><h2>Vehicle Details</h2>';
+		if(isset($_COOKIE['year'])) {
+			update_order_vehicle_note('year',__($_COOKIE['year']),__('Year'));
+		}
+		if(isset($_COOKIE['make'])) {
+			update_order_vehicle_note('make',__($_COOKIE['make']),__('Make'));
+		}
+		if(isset($_COOKIE['model'])) {
+			update_order_vehicle_note('model',__($_COOKIE['model']),__('Model'));
+		}
+		if(isset($_COOKIE['submodel'])) {
+			update_order_vehicle_note('submodel',__($_COOKIE['submodel']),__('Submodel'));
+		}			
+		echo '</div>';	
 	}
-	if(isset($_COOKIE['make'])) {
-		update_order_vehicle_note('make',__($_COOKIE['make']),__('Vehicle model make'));
-	}
-	if(isset($_COOKIE['model'])) {
-		update_order_vehicle_note('model',__($_COOKIE['model']),__('Vehicle model model'));
-	}
-	if(isset($_COOKIE['submodel'])) {
-		update_order_vehicle_note('submodel',__($_COOKIE['submodel']),__('Vehicle model submodel'));
-	}			
-	echo '</div>';	
 }
 
 function update_order_vehicle_note($note_name,$note_value,$note_label){
@@ -429,22 +414,32 @@ function update_order_vehicle_note($note_name,$note_value,$note_label){
 	__( $note_value ));	
 }
 
-add_action('woocommerce_checkout_update_order_meta', 'customise_checkout_field_update_order_meta');
+add_action( 'woocommerce_new_order', 'add_fitment_notes',  1, 1  );
 
-function customise_checkout_field_update_order_meta($order_id){
-    if (!empty($_POST['cart_note_year'])) {
-        update_post_meta($order_id, 'select', sanitize_text_field($_POST['cart_note_year']));
-    }
-    if(isset($_COOKIE['year'])) {
-        update_post_meta($order_id, 'year', __($_COOKIE['year']));
-    }
-    if(isset($_COOKIE['make'])) {
-        update_post_meta($order_id, 'make', __($_COOKIE['make']));
-    }
-    if(isset($_COOKIE['model'])) {
-        update_post_meta($order_id, 'model', __($_COOKIE['model']));
-    }
-    if(isset($_COOKIE['submodel'])) {
-        update_post_meta($order_id, 'submodel', __($_COOKIE['submodel']));
-    }            
+function add_fitment_notes( $order_id ) {
+ //note this line is different 
+ //because I already have the ID from the hook I am using.
+ $order = wc_get_order(  $order_id ); 
+
+ $note = '';
+
+if(isset($_COOKIE['year'])) {
+	$note = 'Year : '.__($_COOKIE['year']).', ';
 }
+if(isset($_COOKIE['make'])) {
+	$note = $note.'Make : '.__($_COOKIE['make']).', ';
+}
+if(isset($_COOKIE['model'])) {
+	$note = $note.'Model : '.__($_COOKIE['model']);
+}
+if(isset($_COOKIE['submodel'])) {
+	$note = $note.', Submodel : '.__($_COOKIE['submodel']);
+}	
+
+ // Add the note
+ $order->add_order_note( $note );
+
+ // Save the data
+ $order->save();
+}
+

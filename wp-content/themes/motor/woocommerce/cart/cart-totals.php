@@ -86,10 +86,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php endif; ?>
 	<?php endif; ?>	
 
-	<?php if ( WC()->cart->needs_shipping() && WC()->cart->show_shipping() ) : ?>	
-		<a href="#" onclick="location.href='/cart'" class="update-shipping button alt">Update Shipping</a>
-	<?php endif; ?>	
-
 	<div class="wc-proceed-to-checkout">
 		<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
 	</div>

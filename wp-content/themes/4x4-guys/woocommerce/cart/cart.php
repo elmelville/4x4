@@ -315,7 +315,7 @@ $cart_template = $motor_options['catalog_cart'];
 		<?php endif; ?>
 
 		<div class="custom-order-note-wrapper">
-      <div id="cm_ymm_cart"></div>
+	      <div id="cm_ymm_cart"></div>
 		</div>	
 
 		<script>
