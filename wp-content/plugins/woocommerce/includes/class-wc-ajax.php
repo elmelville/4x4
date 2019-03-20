@@ -125,7 +125,7 @@ class WC_AJAX {
 			'calc_line_taxes'                                  => false,
 			'save_order_items'                                 => false,
 			'load_order_items'                                 => false,
-			'add_order_note'                                   => false,
+			'add_order_note'                                   => true,
 			'delete_order_note'                                => false,
 			'json_search_products'                             => false,
 			'json_search_products_and_variations'              => false,
