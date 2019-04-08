@@ -3660,7 +3660,7 @@ div.woof_info_popup {
 }
 .prod-items .prod-i .prod-i-img {
 	margin: 0 0 20px;
-	height: 234px;
+	height: auto !important;
 	line-height: 234px;
 	position: relative;
 	display: block;
@@ -5522,6 +5522,7 @@ z-index: 1;
 }
 .woocommerce div.product {
 	margin-bottom: 49px;
+	height: 500px;
 }
 .prod .prod-badge {
 	display: block;
@@ -5644,6 +5645,27 @@ z-index: 1;
 	width: 100%;
 	font-size: 14px;
 	color: #777;
+	-webkit-transform: translate(0,-50%);
+	-ms-transform: translate(0,-50%);
+	transform: translate(0,-50%);	
+	position: absolute;
+	top: 50%;
+	max-width: 60%;	
+}
+@media only screen and (max-width: 768px){
+	.prod .prod-cont {
+		transform: none;
+		position: relative;
+		max-width: 100%;
+		top: auto;	
+	}
+	.woocommerce div.product{
+		height: auto;
+	}
+	.prod-items .prod-i .prod-i-img img{
+		max-height: 85%;
+		max-width: 85%;
+	}
 }
 .prod .prod-cont .woocommerce-message {
 	margin: 26px 4% 0 !important;
@@ -11534,9 +11556,8 @@ body .cart-actions table#shipping-cart-methods .woocommerce-shipping-totals th.d
 }
 
 .custom-order-note-wrapper{
-	background: #fff;
+		background: #fff;
 }
-
 .custom-order-note{
     margin: 0 0 26px;
     position: relative;
