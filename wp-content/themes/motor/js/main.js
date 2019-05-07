@@ -260,12 +260,30 @@ jQuery(document).ready(function ($) {
 		});
 	}
 
+	if(window.innerWidth < 700){
+		$('.menu-item-has-children .cmm-sub-container').each(function(){
+			$(this).prepend('<div class="close-menu-mobile fa fa-close"></div>');
+		});
+	}
+
+	$('.close-menu-mobile').on('click', function(){
+		$(this).closest('.menu-item-has-children').removeClass('active');
+		$(this).closest('.mobile-open').removeClass('mobile-open');
+	});
+
 	$('a.menu-item-has-children').on('click',function(e){
 		e.preventDefault();
 		$('.menu-bg').show();
 		$(this).parent().siblings().find('active').removeClass('active');
 		$(this).parent().siblings().removeClass('active');
-		$(this).parent().toggleClass('active');		
+		$(this).parent().toggleClass('active');	
+		if(window.innerWidth < 700){
+			if($(this).parent().hasClass('active')){
+				$(this).closest('.cmm-sub-container').addClass('mobile-open');
+			}else{
+				$(this).closest('.cmm-sub-container').removeClass('mobile-open');
+			}	
+		}
 	});
 
 	$('.menu-bg').on('click',function(e){
