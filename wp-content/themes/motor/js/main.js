@@ -262,7 +262,7 @@ jQuery(document).ready(function ($) {
 
 	if(window.innerWidth < 700){
 		$('.menu-item-has-children .cmm-sub-container').each(function(){
-			$(this).prepend('<div class="close-menu-mobile fa fa-close"></div>');
+			$(this).prepend('<div class="close-menu-mobile"><span class="fa fa-close"></span><span style="font-weight:bold;"> - Close</span></div>');
 		});
 	}
 

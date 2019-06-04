@@ -10,6 +10,13 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
+ * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ *
+ * REMEMBER TO UPDATE THE CAPTCHA VALUES IF YOU'RE PUTING THIS LIVE!!!!!!
+ * LIVE KEY IS 6LeN6nYUAAAAAND80QBx0LdYGq2mxRdIUMsfnaAv
+ *
+ * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce/Templates
  * @version 3.5.0
